@@ -23,7 +23,7 @@ Before you begin, ensure you have the following installed on your system:
 
 
 - ## Setup Commands
-- 
+  
 Launch Gazebo by running: # Fortress and Citadel use "ign gazebo" instead of "gz sim"
 ```bash
 gz sim shapes.sdf
