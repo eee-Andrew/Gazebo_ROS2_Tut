@@ -23,6 +23,7 @@ Before you begin, ensure you have the following installed on your system:
 
 
 - ## Setup Commands
+- 
 Launch Gazebo by running: # Fortress and Citadel use "ign gazebo" instead of "gz sim"
 ```bash
 gz sim shapes.sdf
@@ -30,7 +31,7 @@ gz sim shapes.sdf
 
 This command will launch both the Sim server and Sim GUI with a world that contains three simple shapes..a
 Add the -v 4 command line argument to generate error, warning, informational, and debugging messages on the console.
-# Fortress and Citadel use "ign gazebo" instead of "gz sim"
+Fortress and Citadel use "ign gazebo" instead of "gz sim"
 ```bash
 gz sim shapes.sdf -v 4 
 ```
