@@ -1,0 +1,28 @@
+# Gazebo_ROS2_Tutorial.
+
+
+Installation guide
+_____________________________________________________________________________________________________________________________________________________________________
+
+
+# Unity Drone System
+
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Prerequisites](#prerequisites)
+3. [Setup Instructions](#setup-instructions-1)
+
+
+
+## Introduction
+This project is a Unity-based drone simulation system designed for controlled navigation. Near future will be autonomous with swarm of drones (Master-slave)
+
+
+## Prerequisites
+Before you begin, ensure you have the following installed on your system:
+- Unity version **2020.3** [Unity-Releases](https://unity.com/releases/editor/archive) 
+- **Python 3** for scripting, we will use it later [Python-downlaod](https://www.python.org/download/releases/3.0/)
+- **ROS (Robot Operating System)** **(Isnt necessary now)** [Ros-Kinetic](https://wiki.ros.org/kinetic/Installation/Ubuntu)
+- Install C# [C#-guide-w3school](https://www.w3schools.com/cs/cs_getstarted.php)
+
+- ## Setup Instructions
