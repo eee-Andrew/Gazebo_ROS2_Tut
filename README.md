@@ -20,5 +20,5 @@ ________________________________________________________________________________
 
 ## Setup Instructions
 
- [Setup Instructions](#https://docs.px4.io/main/en/ros2/user_guide.html#foxy)
+ [Setup Instructions](https://docs.px4.io/main/en/ros2/user_guide.html#foxy)
 
