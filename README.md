@@ -1,18 +1,20 @@
 
 # Gazebo_ROS2_Foxy_PX4.
 
-## Installation Guide
+### Installation Guide
+_____________________________________________________________________________________________________________________________________________________________________
 
 ### YouTube Channels for Reference
-
 - [Getting started with ROS 2 and PX4 - Video 1](https://www.youtube.com/watch?v=qhLATrkA_Gw)
 - [Getting started with ROS 2 and PX4 - Video 2](https://www.youtube.com/watch?v=8gKIP0OqHdQ)
 - [Getting started with ROS 2 and PX4 - Video 3](https://www.youtube.com/watch?v=Nbc7fzxFlYo)
 - [Getting started with ROS 2 and PX4 - Video 4](https://www.youtube.com/watch?v=iRnLB31aQmA)
 
-## Unity Drone System
+---
 
-### Table of Contents
+### Unity Drone System
+
+## Table of Contents
 1. [Introduction](#introduction)
 2. [Prerequisites](#prerequisites)
 3. [Setup Instructions](#setup-instructions-1)
@@ -41,6 +43,8 @@ You can install either the desktop (`ros-foxy-desktop`) or bare-bones versions (
 pip install --user -U empy==3.3.4 pyros-genmsg setuptools
 ```
 
+---
+
 ### Set Up uXRCE-DDS Agent for ROS 2 and PX4 Communication
 
 To install and start the uXRCE-DDS agent, follow these steps:
@@ -64,6 +68,8 @@ MicroXRCEAgent udp4 -p 8888
 
 This agent is now running, ready to connect with the PX4 simulator on UDP port 8888.
 
+---
+
 ### Start PX4 Simulator with Gazebo
 
 In a new terminal, from the PX4 Autopilot repo root:
@@ -73,6 +79,8 @@ make px4_sitl gazebo-classic
 ```
 
 When the agent and PX4 are connected, you should see INFO messages showing data writers creation.
+
+---
 
 ### Build ROS 2 Workspace
 
@@ -100,6 +108,8 @@ source /opt/ros/foxy/setup.bash
 colcon build
 ```
 
+---
+
 ### Running the Example
 
 To run the ROS 2 Listener example:
@@ -121,8 +131,6 @@ ros2 launch px4_ros_com sensor_combined_listener.launch.py
 You should see data output from the Sensor Combined topic.
 
 ---
-
-## Tables
 
 ### ROS 2 & PX4 Frame Conventions
 
@@ -148,6 +156,8 @@ To rotate a vector from FRD to FLU:
 - Pi rotation around the X-axis (front)
 
 Examples of vectors requiring rotation include fields in the `TrajectorySetpoint` and `VehicleThrustSetpoint` messages.
+
+---
 
 ### ROS, Gazebo, and PX4 Time Synchronization
 
