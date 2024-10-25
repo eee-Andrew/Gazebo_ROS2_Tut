@@ -1,13 +1,23 @@
 
-# Gazebo_ROS2_foxy_PX4.
+# Gazebo_ROS2_Foxy_PX4.
 
 ## Installation Guide
 
+### YouTube Channels for Reference
 
-## Table of Contents
+- [Getting started with ROS 2 and PX4 - Video 1](https://www.youtube.com/watch?v=qhLATrkA_Gw)
+- [Getting started with ROS 2 and PX4 - Video 2](https://www.youtube.com/watch?v=8gKIP0OqHdQ)
+- [Getting started with ROS 2 and PX4 - Video 3](https://www.youtube.com/watch?v=Nbc7fzxFlYo)
+- [Getting started with ROS 2 and PX4 - Video 4](https://www.youtube.com/watch?v=iRnLB31aQmA)
+
+## Unity Drone System
+
+### Table of Contents
 1. [Introduction](#introduction)
 2. [Prerequisites](#prerequisites)
 3. [Setup Instructions](#setup-instructions-1)
+
+---
 
 ### PX4 Autopilot Setup
 
@@ -110,48 +120,51 @@ ros2 launch px4_ros_com sensor_combined_listener.launch.py
 
 You should see data output from the Sensor Combined topic.
 
-### Control a Vehicle with ROS 2
+---
 
-ROS 2 applications can subscribe to telemetry topics published by PX4 and publish to topics for vehicle control.
+## Tables
 
-Refer to `dds_topics.yaml` and the [uORB Message Reference](https://docs.px4.io/main/en/msg_docs/) for available topics.
+### ROS 2 & PX4 Frame Conventions
 
-Example QoS settings for subscribing:
+| Frame          | PX4                                  | ROS                       |
+|----------------|--------------------------------------|---------------------------|
+| Body           | FRD (X Forward, Y Right, Z Down)     | FLU (X Forward, Y Left, Z Up) |
+| World          | FRD or NED (X North, Y East, Z Down) | FLU or ENU (X East, Y North, Z Up) |
 
-```cpp
-rmw_qos_profile_t qos_profile = rmw_qos_profile_sensor_data;
-auto qos = rclcpp::QoS(rclcpp::QoSInitialization(qos_profile.history, 5), qos_profile);
+**Coordinate Conversions**:
 
-subscription_ = this->create_subscription<px4_msgs::msg::SensorCombined>("/fmu/out/sensor_combined", qos,
-```
+To rotate a vector from ENU to NED:
+- Pi/2 rotation around the Z-axis (up)
+- Pi rotation around the X-axis
 
-### Frame Conventions
+To rotate a vector from NED to ENU:
+- Pi/2 rotation around the Z-axis (down)
+- Pi rotation around the X-axis
 
-Conversions may be required to align frames between ROS and PX4. Use `frame_transforms` from `PX4/px4_ros_com` for convenient transformations.
+To rotate a vector from FLU to FRD:
+- Pi rotation around the X-axis (front)
 
-To rotate from ENU to NED:
+To rotate a vector from FRD to FLU:
+- Pi rotation around the X-axis (front)
 
-1. Pi/2 rotation around Z-axis (up)
-2. Pi rotation around X-axis
-
-Refer to [Coordinate Frames for Mobile Platforms](https://www.ros.org/reps/rep-0105.html) for more on ROS frames.
+Examples of vectors requiring rotation include fields in the `TrajectorySetpoint` and `VehicleThrustSetpoint` messages.
 
 ### ROS, Gazebo, and PX4 Time Synchronization
 
-To install Gazebo Garden for ROS 2 Foxy on Ubuntu 20.04:
+For Gazebo time synchronization:
+
+Install Gazebo Garden for ROS 2 Foxy on Ubuntu 20.04:
 
 ```bash
 sudo apt install ros-foxy-ros-gzgarden
 ```
 
-This guide now provides instructions for ROS 2 example applications, including:
-- ROS 2 Advertiser
-- Offboard Control
-- Using Flight Controller Hardware
-- Custom uORB Topics
+---
 
-For more tools and commands, explore the ROS 2 CLI:
-(some commands)
+### ROS 2 Example Applications
+
+This guide also includes commands for ROS 2 CLI:
+
 ```bash
 ros2 topic list
 ros2 topic echo
