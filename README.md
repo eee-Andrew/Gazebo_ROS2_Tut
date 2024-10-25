@@ -18,8 +18,7 @@ ________________________________________________________________________________
 Installation guide
 _____________________________________________________________________________________________________________________________________________________________________
 
-## Table of Contents
+## Setup Instructions
 
- [Setup Instructions](#setup-instructions-1)
+ [Setup Instructions](#https://docs.px4.io/main/en/ros2/user_guide.html#foxy)
 
-https://docs.px4.io/main/en/ros2/user_guide.html#foxy
