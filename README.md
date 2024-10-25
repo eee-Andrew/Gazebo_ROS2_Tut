@@ -3,7 +3,6 @@
 
 ## Installation Guide
 
-# Unity Drone System
 
 ## Table of Contents
 1. [Introduction](#introduction)
