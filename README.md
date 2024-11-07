@@ -18,7 +18,8 @@ ________________________________________________________________________________
 
 ## Setup Instructions
 
- [Setup Instructions](https://docs.px4.io/main/en/ros2/user_guide.html#foxy)
+ https://docs.px4.io/main/en/ros2/user_guide.html#foxy
+ https://docs.px4.io/main/en/ros2/user_guide
  -ROS 2 User Guide
 - Install PX4 (to use the PX4 simulator)
 - Install ROS 2
